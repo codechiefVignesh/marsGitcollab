@@ -1,0 +1,9 @@
+float64 posx
+float64 posy
+char ch
+string dir
+---
+float64 posx
+float64 posy
+char chr
+string dir

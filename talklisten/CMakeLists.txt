@@ -9,7 +9,7 @@ add_message_files(FILES posi.msg)
 add_service_files(FILES Position.srv)
 
 ## Generate added messages and services
-generate_messages(DEPENDENCIES std_msgs)
+generate_messages(DEPENDENCIES std_msgs ${PROJECT_NAME})
 
 ## Declare a catkin package
 catkin_package()

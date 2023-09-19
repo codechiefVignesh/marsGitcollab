@@ -1,0 +1,19 @@
+<launch>
+  <arg name="model" default="$(find talklisten)/urdf/my_robot.urdf" />
+  
+
+	<param name="robot_description" command="$(find xacro)/xacro $(arg model)" />
+	<node pkg="robot_state_publisher" name="robot_state_publisher" type="robot_state_publisher" />
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find talklisten)/rviz/config_file.rviz" />
+
+</launch>
+
+  <!-- Launch Gazebo with your robot -->
+  <!-- <param name="robot_description" command="$(find xacro)/xacro $(arg model)" />
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+		<arg name="use_sim_time" value="true"/>
+		<arg name="verbose" value="false"/>
+		<arg name="debug" value="false"/>
+		<arg name="gui" value="true" /> -->
+		<!-- <arg name="world_name" value="$(arg world_file)"/> -->
+	<!-- </include> -->

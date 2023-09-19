@@ -14,14 +14,18 @@ generate_messages(DEPENDENCIES std_msgs ${PROJECT_NAME})
 ## Declare a catkin package
 catkin_package()
 
+install(DIRECTORY urdf launch
+    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
 ## Build talker and listener
 include_directories(include ${catkin_INCLUDE_DIRS})
+add_library(talker programs/talker.cpp)
+add_library(listener programs/listener.cpp)
+add_executable(talke programs/talker.cpp)
+target_link_libraries(talke ${catkin_LIBRARIES})
 
-add_executable(talker programs/talker.cpp)
-target_link_libraries(talker ${catkin_LIBRARIES})
-
-add_executable(listener programs/listener.cpp)
-target_link_libraries(listener ${catkin_LIBRARIES})
+add_executable(listene programs/listener.cpp)
+target_link_libraries(listene ${catkin_LIBRARIES})
 
 add_executable(add_two_ints_server programs/add_two_ints_server.cpp)
 target_link_libraries(add_two_ints_server ${catkin_LIBRARIES})

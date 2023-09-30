@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="model" default="$(find talklisten)/urdf/my_robot.urdf.xacro" />
+    <param name="robot_description" command="$(find xacro)/xacro $(arg model)" />
+	<node pkg="robot_state_publisher" name="robot_state_publisher" type="robot_state_publisher" />
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find talklisten)/rviz/config_file.rviz" />
+    <param name="robot_description" command="$(find xacro)/xacro $(arg model)" />
+	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" output="screen"
+		args="-urdf -model my_robot -param robot_description" />
+</launch>   

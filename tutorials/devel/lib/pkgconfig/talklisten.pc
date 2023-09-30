@@ -1,0 +1,8 @@
+prefix=/home/vignesh/tutorials/devel
+
+Name: talklisten
+Description: Description of talklisten
+Version: 0.0.0
+Cflags: -I/home/vignesh/tutorials/devel/include
+Libs: -L${prefix}/lib 
+Requires: 

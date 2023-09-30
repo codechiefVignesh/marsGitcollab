@@ -1,8 +1,0 @@
-int64 posx
-int64 posy
-char ch
----
-int64 posx
-int64 posy
-char chr
-string dir
